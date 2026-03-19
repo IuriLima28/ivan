@@ -4,4 +4,5 @@ function calcularSalario(salarioBase, percentualBonus){
     return salarioFinal
 }
 
-// module.exports = { calcularSalario }
+if (typeof module !== 'undefined') {
+    module.exports = { calcularSalario }}
