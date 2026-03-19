@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de Lucro</title>
+    <script src="exercicio-04.js"></script>
+    <link rel="stylesheet" href="exercicio-04.css">
+</head>
+<body>
+
+    <h1>Controle Financeiro - Lucro</h1> 
+
+    <label>Custo de Aquisição (R$):</label>
+    <input type="number" id="custoProduto"><br>
+
+    <label>Preço de Venda (R$):</label>
+    <input type="number" id="vendaProduto"><br>
+
+    <button id="btnCalcular">Calcular Lucro</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        const btn = document.getElementById('btnCalcular');
+        
+        btn.onclick = function() {
+            const custo = Number(document.getElementById('custoProduto').value);
+            const venda = Number(document.getElementById('vendaProduto').value);
+            
+            const dados = calcularLucro(custo, venda);
+
+            document.getElementById('resultado').innerHTML = `
+                <p>Custo do Produto: R$ ${dados.custo.toFixed(2)}</p>
+                <p>Preço de Venda: R$ ${dados.venda.toFixed(2)}</p>
+                <p><strong>Lucro Obtido: R$ ${dados.lucro.toFixed(2)}</strong></p>
+            `;
+        };
+    </script>
+
+</body>
+</html>
