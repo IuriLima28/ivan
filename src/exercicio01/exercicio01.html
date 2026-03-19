@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cálculo de desconto em compras</title>
+    <link rel="stylesheet" href="exercicio01.css">
+    <script src="exercicio01.js"></script>
+</head>
+<body>
+    <h1>Cálculo de desconto em compras</h1>
+    <br>
+    <h3>Qual o preço original do produto</h3>
+    <input type="number" id="preco">
+    <br>
+    <h3>Qual percentual de desconto aplicado?</h3>
+    <input type="number" id="percentualDesconto">
+    <br>
+    <button onclick="Calcular()">Calcular</button>
+</body>
+
+<script>
+function Calcular(){
+    var preco = Number(document.getElementById('preco').value);
+    var desconto = Number(document.getElementById('percentualDesconto').value);
+
+    var resultado = CalcularDesconto(preco, desconto);
+
+    alert(
+        "Preço original: R$ " + resultado.precoOriginal.toFixed(2) + "\n" +
+        "Percentual de desconto: " + resultado.percentual + "%\n" +
+        "Valor descontado: R$ " + resultado.valorDesconto.toFixed(2) + "\n" +
+        "Preço final: R$ " + resultado.valorFinal.toFixed(2)
+    );
+}
+</script>
+
+</html>
