@@ -11,5 +11,5 @@ function calcularCustoViagem(distancia, consumoMedio, precoCombustivel) {
 }
 
 if (typeof module !== 'undefined') {
-    module.exports = calcularCustoViagem;
+    module.exports = {calcularCustoViagem};
 }
