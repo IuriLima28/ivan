@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>Investimento base</p>
+    <input id="investimento">
+    <p>Investimento atualmente</p>
+    <input id="atual">
+    <br>
+    <br>
+    <button onclick="calcular()">Calcular Rentabilidade</button>
+
+    <div id="resultado">
+        <p id="rentabilidade">Rentabilidade: </p>
+        <p id="valorInicial"></p>
+        <p id="valorFinal"></p>
+        <p id="diferença"></p>
+    
+    </div>
+
+</body>
+
+<script src="exercicio-05.js"></script>
+
+<script>
+        function calcular() {
+            var valorInvestido = Number(document.getElementById("investimento").value)
+            var valorAtual = Number(document.getElementById("atual").value)
+        
+            var rentabilidade = calcularInvestimento(valorInvestido, valorAtual)
+        
+            document.getElementById("rentabilidade").textContent = "Rentabilidade: " + rentabilidade + "%"
+document.getElementById("valorInicial").textContent = "Valor Inicial: " + valorInvestido
+document.getElementById("valorFinal").textContent = "Valor Final: " + valorAtual 
+document.getElementById("diferença").textContent = "Diferença: " + (valorAtual-valorInvestido)
+        }
+        </script>
+</html>
