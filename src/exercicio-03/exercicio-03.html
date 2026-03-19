@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Custo de Viagem</title>
+    <script src="exercicio-03.js"></script>
+    <link rel="stylesheet" href="exercicio-03.css">
+</head>
+<body>
+
+    <h1>Estimativa de Custo de Viagem</h1>
+
+    <label>Distância (km):</label>
+    <input type="number" id="distancia"><br>
+
+    <label>Consumo Médio (km/L):</label>
+    <input type="number" id="consumo"><br>
+
+    <label>Preço do Litro (R$):</label>
+    <input type="number" id="preco"><br>
+
+    <button id="btnCalcular">Calcular Custo</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        const btn = document.getElementById('btnCalcular');
+        
+        btn.onclick = function() {
+            const d = Number(document.getElementById('distancia').value);
+            const c = Number(document.getElementById('consumo').value);
+            const p = Number(document.getElementById('preco').value);
+            
+            const dados = calcularCustoViagem(d, c, p);
+
+            document.getElementById('resultado').innerHTML = `
+                <p>Distância: ${dados.distancia} km</p>
+                <p>Consumo Médio: ${dados.consumoMedio} km/L</p>
+                <p>Combustível Necessário: ${dados.litrosNecessarios.toFixed(2)} L</p>
+                <p><strong>Custo Total: R$ ${dados.custoTotal.toFixed(2)}</strong></p>
+            `;
+        };
+    </script>
+
+</body>
+</html>
