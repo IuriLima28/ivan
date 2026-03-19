@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>Salário Base</p>
+    <input id="salarioBase">
+    <p>Percentual de Bônus</p>
+    <input id="bonus">
+    <br>
+    <br>
+    <button onclick="calcular()">Calcular Salário Final</button>
+
+    <div id="resultado">
+    
+    </div>
+
+</body>
+
+<script>
+        function calcular() {
+            var salario = Number(document.getElementById("salarioBase").value)
+            var bonus = Number(document.getElementById("bonus").value)
+        
+            var resultado = calcularSalario(salario, bonus)
+        
+            document.getElementById("resultado").innerText = "Salário final: " + resultado
+        }
+        </script>
+<script src="exercicio-02.js"></script>
+</html>
