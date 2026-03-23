@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora de Gorjeta</title>
+  <link rel="stylesheet" href="exercicio09.css">
+</head>
+<body>
+
+  <h2>Calculadora de Gorjeta</h2>
+
+  <label>Valor da conta:</label><br>
+  <input type="number" id="valorConta" placeholder="Ex: 100"><br><br>
+
+  <label>Percentual de gorjeta (%):</label><br>
+  <input type="number" id="percentualGorjeta" placeholder="Ex: 10"><br><br>
+
+  <button onclick="calcular()">Calcular</button>
+
+  <script src="exercicio09.js"></script>
+  <script>
+    function calcular() {
+      const valorConta = Number(document.getElementById("valorConta").value);
+      const percentual = Number(document.getElementById("percentualGorjeta").value);
+
+      const resultado = calcularGorjeta(valorConta, percentual);
+
+      alert(
+        "Valor da conta: R$ " + valorConta.toFixed(2) + "\n" +
+        "Gorjeta: R$ " + resultado.valorGorjeta.toFixed(2) + "\n" +
+        "Total: R$ " + resultado.total.toFixed(2)
+      );
+    }
+  </script>
+
+</body>
+</html>
