@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cálculo de Câmbio</title>
+    <link rel="stylesheet" href="exercicio-10.css">
+
+</head>
+<body>
+
+    <h2>Conversor de Moeda</h2>
+
+    <input type="number" id="valor" placeholder="Valor investido"><br><br>
+    <input type="number" id="taxa" placeholder="Taxa de câmbio"><br><br>
+
+    <button onclick="calcular()">Calcular</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularCambio(valorInvestido, taxa){
+            var valorEmReais = valorInvestido * taxa;
+
+            return {
+                valorEmReais: valorEmReais
+            };
+        }
+
+        function calcular() {
+            var valor = document.getElementById("valor").value;
+            var taxa = document.getElementById("taxa").value;
+
+            var resultado = calcularCambio(valor, taxa);
+
+            document.getElementById("resultado").innerText =
+                "Valor em reais: R$ " + resultado.valorEmReais;
+        }
+    </script>
+
+</body>
+</html>
