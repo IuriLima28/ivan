@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Conversor Kelvin</title>
+    <script src="exercicio-08.js"></script>
+    <link rel="stylesheet" href="exercicio-08.css">
+</head>
+<body>
+
+    <h1>Conversão de Celsius para Kelvin</h1>
+
+    <label>Temperatura em Celsius (°C):</label>
+    <input type="number" id="campoCelsius"><br><br>
+
+    <button id="btnConverter">Calcular Kelvin</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        const btn = document.getElementById('btnConverter');
+        
+        btn.onclick = function() {
+            const valorC = Number(document.getElementById('campoCelsius').value);
+            
+            const dados = converterCelsiusParaKelvin(valorC);
+
+            document.getElementById('resultado').innerHTML = `
+                <p>Temperatura informada: ${valorC}°C</p>
+                <p><strong>Valor em Kelvin: ${dados.resultado} K</strong></p>
+            `;
+        };
+    </script>
+
+</body>
+</html>
