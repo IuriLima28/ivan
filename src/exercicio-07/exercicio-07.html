@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora Bitcoin</title>
+    <link rel="stylesheet" href="exercicio-07.css">
+
+</head>
+<body>
+
+    <h2>Calculadora de Bitcoin</h2>
+
+    <label>Quantidade de BTC:</label><br>
+    <input type="number" id="btc"><br><br>
+
+    <label>Valor do Bitcoin:</label><br>
+    <input type="number" id="valor"><br><br>
+
+    <button onclick="calcular()">Calcular</button>
+
+    <h3 id="resultado"></h3>
+
+    <script src="exercicio-07.js"></script>
+    <script>
+        function calcular() {
+            var btc = document.getElementById("btc").value;
+            var valor = document.getElementById("valor").value;
+
+            var resultado = calcularBitcoin(btc, valor);
+
+            document.getElementById("resultado").innerText =
+                "Valor total: R$ " + resultado.valorTotal;
+        }
+    </script>
+
+</body>
+</html>
