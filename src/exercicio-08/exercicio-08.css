@@ -1,12 +1,18 @@
 body {
-    background: #e3eeff;
+    background-image: url(https://wallpapercave.com/wp/wp1988525.jpg);
     font-family: "Times New Roman", Times, serif;
+    color: white
 }
 
 button {
+    width: 320px;
+    height: 320px;
     border-radius: 10px;
     border-color: #e3eeff;
-    background-color: white;
+    color: red;
+    font-size: 100px;
+    background-image: url(https://i0.wp.com/dreamleaguesoccer.com.br/wp-content/uploads/logo-vasco-da-gama-1.png?fit=320%2C320&ssl=1);
+
 }
 
 input {
