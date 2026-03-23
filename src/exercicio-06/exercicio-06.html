@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora MRU</title>
+    <script src="exercicio-06.js"></script>
+    <link rel="stylesheet" href="exercicio-06.css">
+</head>
+<body>
+
+    <h1>Cálculo de Posição (MRU)</h1>
+
+    <label>Posição Inicial (s₀) em metros:</label>
+    <input type="number" id="s0"><br>
+
+    <label>Velocidade (v) em m/s:</label>
+    <input type="number" id="v"><br>
+
+    <label>Tempo (t) em segundos:</label>
+    <input type="number" id="t"><br>
+
+    <button id="btnCalcular">Calcular Posição Final</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        const btn = document.getElementById('btnCalcular');
+        
+        btn.onclick = function() {
+            const s0 = Number(document.getElementById('s0').value);
+            const v = Number(document.getElementById('v').value);
+            const t = Number(document.getElementById('t').value);
+            
+            const dados = calcularPosicaoMRU(s0, v, t);
+
+            document.getElementById('resultado').innerHTML = `
+                <p>Posição Inicial: ${dados.posicaoInicial} m</p>
+                <p>Velocidade: ${dados.velocidade} m/s</p>
+                <p>Tempo: ${dados.tempo} s</p>
+                <p><strong>Posição Final (s): ${dados.posicaoFinal} m</strong></p>
+            `;
+        };
+    </script>
+
+</body>
+</html>
